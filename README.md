@@ -687,6 +687,8 @@ With standard Indian fuel combustion stoichiometry emitting $2.45\text{ kg CO}_2
 ```text
 d:/Pravaah/
 ├── README.md                          # Comprehensive Technical Documentation (1000+ Lines)
+├── LICENSE-APACHE                     # Apache License 2.0 (dual-licensed with MIT)
+├── LICENSE-MIT                        # MIT License (dual-licensed with Apache 2.0)
 ├── run_all.bat                        # One-click launcher: Edge engine + browser dashboard
 ├── run_simulator_offline.bat          # One-click launcher: Standalone 0-install HTML5 simulator
 ├── run_tests.bat                      # One-click launcher: Full formal test suite
@@ -1321,6 +1323,23 @@ For smart city operations centers and municipal road authorities (ULBs), Pravaah
 5. **Central Road Research Institute (CRRI) & PCRA:** *Evaluation of Vehicular Idling Fuel Losses and Tailpipe Emissions at Signalized Intersections in Indian Metropolitan Cities*, New Delhi.
 6. **Ministry of Housing and Urban Affairs (MoHUA):** *India Urban Data Exchange (IUDX) Traffic Flow Data Models & DPDP Act 2023 Guidelines*, Government of India.
 7. **Ministry of Youth Affairs & Sports (MoYAS) & IIT Bombay:** *MY Bharat — Hack for Social Cause 2026 Problem Statement Framework*.
+
+---
+
+## 18. License
+
+Copyright © 2026 Priyanshu Ghosh.
+
+Pravaah AI is dual-licensed under either of the following, at your option:
+
+- **Apache License, Version 2.0** — [`LICENSE-APACHE`](LICENSE-APACHE) or <https://www.apache.org/licenses/LICENSE-2.0>
+- **MIT License** — [`LICENSE-MIT`](LICENSE-MIT) or <https://opensource.org/licenses/MIT>
+
+SPDX identifier: `MIT OR Apache-2.0`
+
+### Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in this project, as defined in the Apache-2.0 license, shall be dual-licensed as above, without any additional terms or conditions.
 
 ---
 
