@@ -1,0 +1,67 @@
+junction_id: "IND-WB-KOL-004"
+junction_name: "Ultadanga Main 4-Way Crossing"
+city: "Kolkata"
+coordinates:
+  lat: 22.5917
+  lon: 88.3924
+
+timing_parameters:
+  startup_lost_time_sec: 4.5
+  amber_duration_sec: 3.0            # IRC:93 minimum 3.0s
+  all_red_duration_sec: 2.0          # Conflict box clearance buffer
+  min_green_vehicle_sec: 10.0
+  max_green_vehicle_sec: 60.0
+  gap_out_empty_threshold_sec: 3.5   # Early termination when queue clears
+  pedestrian_walk_speed_mps: 1.2     # IRC:93 standard
+  senior_ped_extension_step_sec: 2.0
+  senior_ped_max_bonus_sec: 10.0
+  starvation_alpha: 0.45             # PCU-eq gained per waiting second
+  starvation_hard_cap_sec: 95.0
+  shadow_fixed_green_sec: 45.0       # Baseline for live wait/fuel savings calculation
+
+pcu_weights:
+  two_wheeler: 0.50
+  car_lmv: 1.00
+  auto_rickshaw: 1.00
+  bus_truck_hmv: 3.00
+  ambulance_emergency: 1.50
+
+watchdog_thresholds:
+  min_laplacian_blur_var: 35.0
+  min_luminance: 8.0
+  max_glare_saturation_ratio: 0.60
+  degraded_trigger_hold_sec: 6.0
+
+approaches:
+  NORTH:
+    rtsp_source: "synthetic://north"
+    effective_width_m: 7.0           # Saturation flow = 525 * 7.0 = 3675 PCU/hr (1.02 PCU/s)
+    crosswalk_length_m: 14.0
+    max_roi_saturation_pcu: 32.0
+    queue_roi_norm: [[0.28, 0.18], [0.72, 0.18], [0.92, 0.88], [0.10, 0.88]]
+    crosswalk_roi_norm: [[0.08, 0.88], [0.94, 0.88], [0.96, 0.98], [0.06, 0.98]]
+    relay_pins: { red: 2, amber: 3, green: 4, ped_walk: 17 }
+  EAST:
+    rtsp_source: "synthetic://east"
+    effective_width_m: 6.0
+    crosswalk_length_m: 12.0
+    max_roi_saturation_pcu: 26.0
+    queue_roi_norm: [[0.25, 0.20], [0.75, 0.20], [0.90, 0.86], [0.12, 0.86]]
+    crosswalk_roi_norm: [[0.10, 0.86], [0.92, 0.86], [0.94, 0.97], [0.08, 0.97]]
+    relay_pins: { red: 14, amber: 15, green: 18, ped_walk: 27 }
+  SOUTH:
+    rtsp_source: "synthetic://south"
+    effective_width_m: 7.0
+    crosswalk_length_m: 14.0
+    max_roi_saturation_pcu: 32.0
+    queue_roi_norm: [[0.26, 0.19], [0.74, 0.19], [0.91, 0.87], [0.11, 0.87]]
+    crosswalk_roi_norm: [[0.09, 0.87], [0.93, 0.87], [0.95, 0.98], [0.07, 0.98]]
+    relay_pins: { red: 22, amber: 23, green: 24, ped_walk: 10 }
+  WEST:
+    rtsp_source: "synthetic://west"
+    effective_width_m: 5.5
+    crosswalk_length_m: 11.0
+    max_roi_saturation_pcu: 22.0
+    queue_roi_norm: [[0.27, 0.22], [0.73, 0.22], [0.89, 0.85], [0.13, 0.85]]
+    crosswalk_roi_norm: [[0.11, 0.85], [0.91, 0.85], [0.93, 0.96], [0.09, 0.96]]
+    relay_pins: { red: 9, amber: 25, green: 11, ped_walk: 8 }

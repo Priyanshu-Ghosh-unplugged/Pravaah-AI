@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------- Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------- Node / frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vite/
+*.tsbuildinfo
+# frontend_dashboard/dist/ is intentionally tracked: run_all.bat serves the pre-built
+# dashboard from it so the demo runs without npm.
+
+# ---------------------------------------------------------------- Runtime data
+# Local SQLite telemetry / citizen ticket store (created at runtime)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/*.db-journal
+*.log
+logs/
+
+# ---------------------------------------------------------------- Model weights
+# Exported by models/export_int8.py; too large for git
+models/*.onnx
+models/*.pt
+models/*.engine
+
+# ---------------------------------------------------------------- Secrets / local config
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------------------------- Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

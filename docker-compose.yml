@@ -1,0 +1,28 @@
+services:
+  mosquitto-broker:
+    image: eclipse-mosquitto:2.0
+    restart: always
+    ports:
+      - "1883:1883"
+      - "8883:8883"
+    volumes:
+      - ./configs/mosquitto:/mosquitto/config:ro
+
+  pravaah-edge-core:
+    build:
+      context: .
+      dockerfile: Dockerfile.edge
+    restart: always
+    privileged: true   # Required on physical Pi 5 / Jetson for GPIO access
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./configs:/app/configs:ro
+      - ./models:/app/models:ro
+      - pravaah_wal_db:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OMP_NUM_THREADS=3
+
+volumes:
+  pravaah_wal_db:

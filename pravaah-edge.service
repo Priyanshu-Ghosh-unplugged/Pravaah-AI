@@ -1,0 +1,25 @@
+[Unit]
+Description=Pravaah AI Edge Adaptive Traffic Signal Controller
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=pravaah
+Group=gpio
+WorkingDirectory=/opt/pravaah-smart-signal
+ExecStart=/opt/pravaah-smart-signal/.venv/bin/python -m edge_engine.main
+Restart=always
+RestartSec=1
+WatchdogSec=5
+CPUSchedulingPolicy=fifo
+CPUSchedulingPriority=50
+MemoryMax=1536M
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/pravaah-smart-signal/data
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+# Indian Traffic 6-Class Dataset Configuration for Pravaah AI
+# Curated for Indian Driving Dataset (IDD), UVH-26 & CCTV Overhead Splits
+
+path: ../datasets/indian_traffic
+train: images/train
+val: images/val
+test: images/test
+
+# Classes (Mapped to IRC:106 PCU Weights)
+names:
+  0: pedestrian            # Walking citizens & zebra crosswalk occupants
+  1: two_wheeler           # Motorcycles, scooters, bicycles (0.50 PCU)
+  2: car_lmv               # Hatchbacks, sedans, SUVs, tempo vans (1.00 PCU)
+  3: auto_rickshaw         # 3-Wheeler CNG / Electric Rickshaws (1.00 PCU)
+  4: bus_truck_hmv         # City buses, school buses, trucks, tractors (3.00 PCU)
+  5: ambulance_emergency   # Ambulances, fire tenders, police response (1.50 PCU + Preempt)
+
+# Download / Metadata URLs
+# IDD: https://idd.insaan.iiit.ac.in/
+# UVH-26: Indian Urban CCTV Overhead Split
