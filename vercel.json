@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "cd frontend_dashboard && npm ci",
+  "buildCommand": "cd frontend_dashboard && npm run build && cp ../traffic_demo.html dist/simulator.html",
+  "outputDirectory": "frontend_dashboard/dist",
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}
